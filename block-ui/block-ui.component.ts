@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { BlockUiInterface } from './interface/block-ui.interface';
+import { BlockUIFactory } from './factory/block-ui.factory';
+import { BlockUIAlignment, BlockUiInterface } from './interface/block-ui.interface';
 
 @Component({
   selector: 'ieat-block-ui',
@@ -9,20 +10,13 @@ import { BlockUiInterface } from './interface/block-ui.interface';
 export class BlockUiComponent implements OnInit {
 
   @Input()
-  blockUiModel: BlockUiInterface = {
-    isShowBlockUi: false,
-    headerBgColor: 'white',
-    headerMessage: 'This is header',
-    isShowCloseButton: false
-  };
+  blockUiModel: BlockUiInterface = BlockUIFactory.getDefault();
 
   @Output()
   blockUiBgClick: EventEmitter<void> = new EventEmitter<void>();
 
   @Output()
   blockUiCloseClick: EventEmitter<void> = new EventEmitter<void>();
-
-
 
   constructor() { }
 
@@ -36,5 +30,12 @@ export class BlockUiComponent implements OnInit {
     this.blockUiCloseClick.emit();
   }
 
+  configureHeaderMessageStyle(): any {
+    const margin = this.blockUiModel.headerMessage.alignment === BlockUIAlignment.CENTER ? '0 1' : '0 0';
+    return {
+      'text-align': this.blockUiModel.headerMessage.alignment,
+      margin
+    };
+  }
 
 }
