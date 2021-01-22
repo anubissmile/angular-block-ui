@@ -1,0 +1,23 @@
+
+<ng-template [ngIf]="alertModel && blockUIModel">
+  <ng-template [ngIf]="alertModel.isShowBlockUI">
+    <ieat-block-ui [blockUiModel]="blockUIModel"
+                    (blockUiCloseClick)="onCloseClick()">
+
+      <div class="block_ui" content>
+        <div class="block_ui--details">
+          <div class="block_ui--details--item">
+            {{ alertModel.messageContent }}
+          </div>
+        </div>
+        <div class="block_ui--buttons">
+          <ieat-common-button *ngIf="isShowSecondaryButton()"
+                              [buttonModel]="secondaryButtonModel"
+                              (clickEmitter)="onSecondaryButtonClick($event)"></ieat-common-button>
+          <ieat-common-button [buttonModel]="primaryButtonModel"
+                              (clickEmitter)="onPrimaryButtonClick($event)"></ieat-common-button>
+        </div>
+      </div>
+    </ieat-block-ui>
+  </ng-template>
+</ng-template>

@@ -1,10 +1,9 @@
-import { BlockUiInterface } from '../interface/block-ui.interface';
+import { BlockUIAlignment, BlockUIHeader, BlockUiInterface } from '../interface/block-ui.interface';
 
 export class BlockUIModel implements BlockUiInterface {
+  headerMessage: BlockUIHeader;
   isShowBlockUi: boolean;
   isShowCloseButton: boolean;
-  headerMessage: string;
-  headerBgColor: string;
 }
 
 export class BlockUIFactory {
@@ -15,18 +14,20 @@ export class BlockUIFactory {
 
   public static getDefault(): BlockUIModel {
     return {
+      headerMessage: {
+        bgColor: 'white',
+        message: '',
+        alignment: BlockUIAlignment.CENTER
+      },
       isShowBlockUi: false,
-      headerBgColor: 'white',
-      headerMessage: null,
       isShowCloseButton: true
     } as BlockUIModel;
   }
 
   public static parse(val: BlockUiInterface): BlockUIModel {
     return {
-      isShowBlockUi: val.isShowBlockUi,
-      headerBgColor: val.headerBgColor,
       headerMessage: val.headerMessage,
+      isShowBlockUi: val.isShowBlockUi,
       isShowCloseButton: val.isShowCloseButton
     } as BlockUIModel;
   }
