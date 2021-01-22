@@ -5,7 +5,7 @@ import { BlockUIFactory, BlockUIModel } from '../factory/block-ui.factory';
 import { BlockUIAlertInterface, BlockUIAlertTypeEnum } from './interface/block-ui-alert.interface';
 
 @Component({
-  selector: 'ieat-block-ui-alert',
+  selector: 'block-ui-alert',
   templateUrl: './block-ui-alert.component.html',
   styleUrls: ['./block-ui-alert.component.scss']
 })

@@ -3,7 +3,7 @@ import { BlockUIFactory } from './factory/block-ui.factory';
 import { BlockUIAlignmentEnum, BlockUiInterface } from './interface/block-ui.interface';
 
 @Component({
-  selector: 'ieat-block-ui',
+  selector: 'block-ui',
   templateUrl: './block-ui.component.html',
   styleUrls: ['./block-ui.component.scss']
 })
