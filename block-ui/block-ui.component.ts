@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BlockUIFactory } from './factory/block-ui.factory';
-import { BlockUIAlignment, BlockUiInterface } from './interface/block-ui.interface';
+import { BlockUIAlignmentEnum, BlockUiInterface } from './interface/block-ui.interface';
 
 @Component({
   selector: 'ieat-block-ui',
@@ -31,7 +31,7 @@ export class BlockUiComponent implements OnInit {
   }
 
   configureHeaderMessageStyle(): any {
-    const margin = this.blockUiModel.headerMessage.alignment === BlockUIAlignment.CENTER ? '0 1' : '0 0';
+    const margin = this.blockUiModel.headerMessage.alignment === BlockUIAlignmentEnum.CENTER ? '0 1' : '0 0';
     return {
       'text-align': this.blockUiModel.headerMessage.alignment,
       margin

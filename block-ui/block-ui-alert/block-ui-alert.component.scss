@@ -1,0 +1,22 @@
+
+.block_ui {
+  width: 20rem;
+  min-height: 6rem;
+  margin: 0 0 1rem;
+
+  &--details {
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
+
+    &--item {
+      min-height: 5rem;
+    }
+
+  }
+
+  &--buttons {
+    text-align: right;
+  }
+
+}

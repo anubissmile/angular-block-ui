@@ -1,16 +1,16 @@
 export interface BlockUiInterface {
   isShowBlockUi: boolean;
   isShowCloseButton: boolean;
-  headerMessage: BlockUIHeader;
+  headerMessage: BlockUIHeaderInterface;
 }
 
-export interface BlockUIHeader {
+export interface BlockUIHeaderInterface {
   message: string;
   bgColor: string;
-  alignment: BlockUIAlignment;
+  alignment: BlockUIAlignmentEnum;
 }
 
-export enum BlockUIAlignment {
+export enum BlockUIAlignmentEnum {
   CENTER = 'center',
   LEFT = 'left',
   RIGHT = 'right'
